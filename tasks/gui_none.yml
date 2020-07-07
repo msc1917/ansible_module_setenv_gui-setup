@@ -1,0 +1,16 @@
+---
+- name: Deinstall Packages
+  apt:
+    name: [ 'desktop-base', 'lightdm', 'lxappearance', 'lxde-common', 'lxde-icon-theme', 'lxinput', 'lxpanel', 'lxpolkit', 'lxrandr', 'lxsession-edit', 'lxshortcut', 'lxtask', 'lxterminal', 'obconf', 'openbox', 'raspberrypi-artwork', 'xarchiver', 'xinit', 'xserver-xorg', 'xserver-xorg-video-fbdev', 'x11-common', 'x11-xserver-utils', 'x11-utils', 'xdg-user-dirs', 'xdg-utils', 'xkb-data', 'xauth', 'gnome-icon-theme', 'gnome-menus', 'gnome-themes-extra', 'gnome-themes-extra-data', 'gnome-themes-standard' ]
+    autoremove: yes
+    purge: yes
+    state: absent 
+    update_cache: no
+  become: yes
+
+- name: Install Packages
+  apt:
+    name: [ 'vim', 'vim-scripts', 'vim-doc' ]
+    state: present 
+    update_cache: no
+  become: yes
