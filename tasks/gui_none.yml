@@ -7,10 +7,5 @@
     state: absent 
     update_cache: no
   become: yes
-
-- name: Install Packages
-  apt:
-    name: [ 'vim', 'vim-scripts', 'vim-doc' ]
-    state: present 
-    update_cache: no
-  become: yes
+  when: 
+    - ansible_distribution == "Debian"  
